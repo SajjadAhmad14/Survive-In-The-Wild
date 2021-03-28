@@ -1,39 +1,38 @@
 import Phaser from 'phaser';
-import logoImg from './assets/logo.png';
-
-class MyGame extends Phaser.Scene
-{
-    constructor ()
-    {
-        super();
-    }
-
-    preload ()
-    {
-        this.load.image('logo', logoImg);
-    }
-      
-    create ()
-    {
-        const logo = this.add.image(400, 150, 'logo');
-      
-        this.tweens.add({
-            targets: logo,
-            y: 450,
-            duration: 2000,
-            ease: "Power2",
-            yoyo: true,
-            loop: -1
-        });
-    }
-}
+import PhaserMatterCollisionPlugin from 'phaser-matter-collision-plugin';
+import MainScene from './scenes/mainScene.js'
+import Preloader from './scenes/preloader.js';
+import Title from './scenes/title.js';
+import ScoreBoard from './scenes/scoreBoard.js';
+import helpScene from './scenes/helpMe.js';
+import UserName from './scenes/userName.js';
 
 const config = {
-    type: Phaser.AUTO,
-    parent: 'phaser-example',
-    width: 800,
-    height: 600,
-    scene: MyGame
-};
+width: 515,
+height: 512,
+backgroundColor: '#333',
+type: Phaser.AUTO,
+parent: 'survival-game',
+scene: [Preloader, Title, ScoreBoard, MainScene, UserName],
+scale: {
+  zoom: 1
+},
+physics: {
+  default: 'matter',
+  matter: {
+    debug: false,
+    gravity: { y: 0 }
+  }
+},
+plugins: {
+  scene: [
+    {
+      plugin: PhaserMatterCollisionPlugin,
+      key: 'matterCollision',
+      mapping: 'matterCollision'
+    }
+  ]
+}
 
-const game = new Phaser.Game(config);
+}
+let game = new Phaser.Game(config)

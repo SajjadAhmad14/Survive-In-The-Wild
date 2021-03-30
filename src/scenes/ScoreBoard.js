@@ -5,9 +5,10 @@ export default class ScoreBoard extends Phaser.Scene {
   constructor() {
     super('scoreboard');
   }
+  // result: "Game with ID: vKYrb4UwuxxJJnYbf0GB added."
 
   create() {
-    const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/nJMvjp5o0e7RhCRrNWFM/scores';
+    const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/vKYrb4UwuxxJJnYbf0GB/scores';
     const score = JSON.parse(localStorage.getItem('score:'));
     const username = JSON.parse(localStorage.getItem('username:'));
     const obj = { 

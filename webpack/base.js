@@ -22,7 +22,7 @@ module.exports = {
       {
         test: /\.(gif|png|jpe?g|svg|xml|wav|mp3)$/i,
         use: "file-loader"
-      }
+      },
     ]
   },
   plugins: [

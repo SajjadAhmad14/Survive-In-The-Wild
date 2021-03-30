@@ -21,8 +21,9 @@ export default class Title extends Phaser.Scene {
     this.sound.pauseOnBlur = false;
 
     this.play = this.add.image(250, 150, 'play').setInteractive();
+    // this.play = this.add.sprite(250, 150, 'play').setInteractive();
     this.play.on('pointerdown', () => {
-      this.scene.start('UserName');
+      this.scene.start('getUserName');
     });
     this.help = this.add.image(250, 250, 'help').setInteractive();
     this.help.on('pointerdown', () => {

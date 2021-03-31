@@ -3,9 +3,9 @@ import PhaserMatterCollisionPlugin from 'phaser-matter-collision-plugin';
 import MainScene from './scenes/MainScene.js'
 import Preloader from './scenes/Preloader.js';
 import Title from './scenes/Title.js';
-// import ScoreBoard from './scenes/ScoreBoard.js';
 import helpMe from './scenes/helpMe.js';
 import GetUserName from './scenes/getUserName.js';
+import ScoreBoard from './scenes/ScoreBoard.js';
 
 const config = {
   width: 515,
@@ -16,7 +16,7 @@ const config = {
   dom: {
     createContainer: true
 },
-  scene: [Preloader, Title, MainScene, GetUserName, helpMe],
+  scene: [Preloader, Title, MainScene, GetUserName, helpMe, ScoreBoard],
   scale: {
     zoom: 1
   },

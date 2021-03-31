@@ -21,7 +21,6 @@ export default class Title extends Phaser.Scene {
     this.sound.pauseOnBlur = false;
 
     this.play = this.add.image(250, 150, 'play').setInteractive();
-    // this.play = this.add.sprite(250, 150, 'play').setInteractive();
     this.play.on('pointerdown', () => {
       this.scene.start('getUserName');
     });
@@ -31,7 +30,7 @@ export default class Title extends Phaser.Scene {
     });
     this.score = this.add.image(250, 350, 'score').setInteractive();
     this.score.on('pointerdown', () => {
-      this.scene.start('scoreboard');
+      this.scene.start('ScoreBoard');
     });
   }
 

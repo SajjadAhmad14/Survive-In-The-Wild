@@ -5,13 +5,15 @@ import playerAtlas from '../assets/images/male_atlas.json';
 import playerAnimation from '../assets/images/male_anim.json';
 import sceneObjects from '../assets/images/items.png';
 import playerSound from '../assets/sound/player.wav';
+import APIHandler from '../APIs/api';
 
 export default class Player extends MatterEntity {
   constructor(obj) {
     let { scene, x, y, texture, frame } = obj;
     super({...obj,health:2, drops:[],name:'player'});
     this.touching = [];
-
+    this.score = 0;
+    localStorage.setItem('score:', JSON.stringify(this.score));
     this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene, 0, 0, 'items', 162);
     this.spriteWeapon.setScale(0.8)
     this.spriteWeapon.setOrigin(0.25, 0.75);
@@ -42,7 +44,15 @@ export default class Player extends MatterEntity {
     this.setTexture('items',0);
     this.setOrigin(0.5);
     this.spriteWeapon.destroy();
-    location.reload();
+    const username = JSON.parse(localStorage.getItem('username:'));
+
+    const obj = {
+      user: username,
+      score: this.score,
+    };
+    APIHandler.postData('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/6UO8hpWkneCSx6cYRvlC/scores', obj)
+    this.scene.scene.stop('MainScene');
+    this.scene.scene.start('titleScene');
   }
 
   update() {
@@ -140,6 +150,7 @@ export default class Player extends MatterEntity {
       gameObject.hit();
       if(gameObject.dead) {
         gameObject.destroy();
+        this.score += 100;
       }
     });
   }

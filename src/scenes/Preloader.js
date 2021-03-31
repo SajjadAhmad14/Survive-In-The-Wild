@@ -59,7 +59,6 @@ export default class Preloader extends Phaser.Scene {
     this.load.audio('wolf', wolfVoice);
     this.load.audio('ent', entVoice);
     this.load.audio('background', backgroundSound);
-    // this.load.html("nameform", "../assets/text/user.html");
     this.loading = this.add.graphics();
     this.load.on('progress', progress => {
       this.loading.fillStyle(0x0000ff, 1);

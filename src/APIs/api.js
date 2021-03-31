@@ -1,5 +1,5 @@
-const DataRequester = (() => {
-  const requestData = async (link, obj) => {
+const APIHandler = (() => {
+  const postData = async (url, dataObj) => {
     try {
       const response = await fetch(url, {
         mode: 'cors',
@@ -7,7 +7,7 @@ const DataRequester = (() => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(obj),
+        body: JSON.stringify(dataObj),
       });
       return response.json();
     } catch (err) {
@@ -15,16 +15,16 @@ const DataRequester = (() => {
     }
   };
 
-  const receiveData = async (link) => {
+  const getData = async (url) => {
     try {
-      const response = await fetch(link);
+      const response = await fetch(url);
       return response.json();
     } catch (err) {
       return err;
     }
   };
 
-  return { requestData, receiveData };
+  return { postData, getData };
 })();
 
-export default DataRequester;
+export default APIHandler;

@@ -39,6 +39,6 @@ export default class MainScene extends Phaser.Scene {
   update() {
     this.enemies.forEach(enemy => enemy.update());
     this.player.update();
-    this.score.setText(`score:${this.player.score}`);
+    this.score.setText(`SCORE:${this.player.score}`);
   }
 }

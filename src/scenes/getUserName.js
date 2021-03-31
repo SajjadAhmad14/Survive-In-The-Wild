@@ -8,7 +8,7 @@ export default class GetUserName extends Phaser.Scene {
   create() {
     this.add.text(150, 100, 'Please Enter Your Name:');
     this.input = this.add.dom(250, 150, 'input', 'border-radius:-1px;');
-    this.submit = this.add.dom(250, 200, 'button', 'padding:10px;background-color:white;', 'Submit');
+    this.submit = this.add.dom(250, 200, 'button', 'padding:10px;background-color:white;', 'Play');
     this.btn = document.querySelector('button');
     this.btn.addEventListener('click', () => {
       this.inputValue = document.querySelector('input').value;
@@ -21,5 +21,5 @@ export default class GetUserName extends Phaser.Scene {
     });
   }
 
-  update() {} // eslint-disable-line
+  update() {}
 }

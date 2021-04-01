@@ -24,7 +24,6 @@ export default class MainScene extends Phaser.Scene {
     this.map = map;
     const tileset = map.addTilesetImage('RPG Nature Tileset', 'tiles', 32, 32, 0, 0);
     const layer1 = map.createLayer('Tile Layer 1', tileset, 0, 0);
-    // const layer2 = map.createLayer('Tile Layer 2', tileset, 0, 0);
     layer1.setCollisionByProperty({ collides: true });
     this.matter.world.convertTilemapLayer(layer1);
     this.map.getObjectLayer('MyResources').objects.forEach((resource) => new Resource({ scene: this, resource }));

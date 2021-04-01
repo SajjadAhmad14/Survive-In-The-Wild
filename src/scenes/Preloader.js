@@ -16,7 +16,6 @@ import bushSound from '../assets/sound/bush.wav';
 import bearVoice from '../assets/sound/bear.wav';
 import wolfVoice from '../assets/sound/wolf.wav';
 import entVoice from '../assets/sound/ent.wav';
-// import playerSound from '../assets/sound/player.wav';
 import collectSound from '../assets/sound/pick.wav';
 import backgroundSound from '../assets/sound/dark-forest.mp3';
 import instructionsPng from '../assets/images/instructions.png';
@@ -60,7 +59,7 @@ export default class Preloader extends Phaser.Scene {
     this.load.on('progress', (progress) => {
       this.loading.fillStyle(0x0000ff, 1);
       this.loading.fillRect(100, 150, 300 * progress, 25);
-      percentage.setText(`${parseInt(progress * 100)}%`);
+      percentage.setText(`${parseInt(progress * 100)}%`); // eslint-disable-line
     });
     this.load.on('fileprogress', (file) => {
       fileloading.setText(file.key);

@@ -9,9 +9,6 @@ import APIHandler from '../APIs/api';
 
 export default class Player extends MatterEntity {
   constructor(obj) {
-    // const {
-    //   scene, x, y, texture, frame,
-    // } = obj;
     super({
       ...obj, health: 2, drops: [], name: 'player',
     });

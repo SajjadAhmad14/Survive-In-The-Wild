@@ -13,7 +13,7 @@ export default class MatterEntity extends Phaser.Physics.Matter.Sprite {
     this.name = name;
     this.health = health;
     this.drops = drops;
-    this._position = new Phaser.Math.Vector2(this.x, this.y);
+    this._position = new Phaser.Math.Vector2(this.x, this.y);  // eslint-disable-line
     if (this.name) {
       this.sound = this.scene.sound.add(this.name);
     }
@@ -21,8 +21,8 @@ export default class MatterEntity extends Phaser.Physics.Matter.Sprite {
   }
 
   get position() {
-    this._position.set(this.x, this.y);
-    return this._position;
+    this._position.set(this.x, this.y);  // eslint-disable-line
+    return this._position;  // eslint-disable-line
   }
 
   get velocity() {
@@ -33,7 +33,7 @@ export default class MatterEntity extends Phaser.Physics.Matter.Sprite {
     return this.health <= 0;
   }
 
-  onDeath() {
+  onDeath() {  // eslint-disable-line
 
   }
 
@@ -41,7 +41,7 @@ export default class MatterEntity extends Phaser.Physics.Matter.Sprite {
     if (this.sound) {
       this.sound.play();
     }
-    this.health--;
+    this.health--; // eslint-disable-line
     if (this.dead) {
       this.onDeath();
       this.drops.forEach((drop) => new DropItem({

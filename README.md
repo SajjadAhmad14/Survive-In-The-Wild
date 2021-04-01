@@ -1,49 +1,71 @@
-# Phaser 3 Webpack Project Template
+# RGPG GAME(Survive-In-The-Wild)
 
-A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 4](https://webpack.js.org/) that includes hot-reloading for development and production-ready builds.
+> This repo contains source code of an RPG game built using Phaser framework and webpack.
+ 
+ # Abou Game
 
-This has been updated for Phaser 3.50.0 version and above.
+This game is about a journey of a lone traveler through a dark wild in which there are some bears, Wolves, and Ents. Hero player needs to kill them to save itself. If you can kill your enemies, congrats, you have way too much free time on your hands and maybe you should do something better with your life. You can play piano for instance!
 
-Loading images via JavaScript module `import` is also supported, although not recommended.
+# Instructions To Play The Game
 
-## Requirements
+Up arrow - Move Up
+Left arrow - Move Left
+Down arrow - Move Down
+Right arrow - Move Right
+Mouse Left Click - Weapon Swing
 
-[Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
+![screenshot](./src/assets/images/game-screenshot.png)
 
-## Available Commands
+## Live Demo
 
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install project dependencies |
-| `npm start` | Build project and open web server running project |
-| `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) |
+<a href = 'https://lone-survivor.netlify.app/' target = 'blank'>Play</a>
 
-## Writing Code
+## Game Design Document
 
-After cloning the repo, run `npm install` from your project directory. Then, you can start the local development server by running `npm start`.
+<a href = 'https://docs.google.com/document/d/1KZHVj4_OjycNqJfWZkpzbE7I8Oo4hbOoQ3nWSM3w1o8/edit?usp=sharing' target = 'blank'>See Document</a>
 
-After starting the development server with `npm start`, you can edit any files in the `src` folder and webpack will automatically recompile and reload your server (available at `http://localhost:8080` by default).
+## Set Up Project Locally
 
-## Customizing the Template
+**To get this project set up on your local machine, follow these simple steps:**
 
-### Babel
+**Step 1**<br>
+Navigate through the local folder where you want to clone the repository and run<br>
+`git@github.com:SajjadAhmad14/Survive-In-The-wild.git` to clone the repo to your local folder.<br>
+or with https<br>
+`https://github.com/SajjadAhmad14/Survive-In-The-wild.git`.<br>
+**Step 2**<br>
+Run `cd Survive-In-The-wild`<br>
+**Step 2**<br>
+Run `npm install`<br>
 
-You can write modern ES6+ JavaScript and Babel will transpile it to a version of JavaScript that you want your project to support. The targeted browsers are set in the `.babelrc` file and the default currently targets all browsers with total usage over "0.25%" but excludes IE11 and Opera Mini.
+## Built With
 
- ```
-"browsers": [
-  ">0.25%",
-  "not ie 11",
-  "not op_mini all"
-]
- ```
+- Phaser 3
+- Javascript
+- Webpack
+- HTML
+- CSS
+- VScode
+- Netlify
 
-### Webpack
+## Authors
 
-If you want to customize your build, such as adding a new webpack loader or plugin (i.e. for loading CSS or fonts), you can modify the `webpack/base.js` file for cross-project changes, or you can modify and/or create new configuration files and target them in specific npm tasks inside of `package.json'.
+👤 **Sajjad Ahmad**
 
-## Deploying Code
+- GitHub: [@githubhandle](https://github.com/SajjadAhmad14)
+- Twitter: [@twitterhandle](https://twitter.com/Sajjad_Ahmad14)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/sajjadahmad14)
 
-After you run the `npm run build` command, your code will be built into a single bundle located at `dist/bundle.min.js` along with any other assets you project depended. 
+## 🤝 Contributing
 
-If you put the contents of the `dist` folder in a publicly-accessible location (say something like `http://mycoolserver.com`), you should be able to open `http://mycoolserver.com/index.html` and play your game.
+Contributions, issues, and feature requests are welcome!
+
+Please Open a pull request if you want to add a feature or see any bug!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.

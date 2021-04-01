@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+
 export default class HelpMe extends Phaser.Scene {
   constructor() {
     super('helpScene');

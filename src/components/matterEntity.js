@@ -1,10 +1,12 @@
 import Phaser from 'phaser';
-import DropItem from "./dropItem";
+import DropItem from './dropItem';
 
 export default class MatterEntity extends Phaser.Physics.Matter.Sprite {
   constructor(data) {
-    let{name,scene,x,y,health,drops,texture,frame,depth} = data;
-    super(scene.matter.world,x,y,texture,frame);
+    const {
+      name, scene, x, y, health, drops, texture, frame, depth,
+    } = data;
+    super(scene.matter.world, x, y, texture, frame);
     this.x += this.width / 2;
     this.y += this.height / 2;
     this.depth = depth || 1;
@@ -12,14 +14,14 @@ export default class MatterEntity extends Phaser.Physics.Matter.Sprite {
     this.health = health;
     this.drops = drops;
     this._position = new Phaser.Math.Vector2(this.x, this.y);
-    if(this.name) {
+    if (this.name) {
       this.sound = this.scene.sound.add(this.name);
     }
     this.scene.add.existing(this);
   }
 
   get position() {
-    this._position.set(this.x,this.y);
+    this._position.set(this.x, this.y);
     return this._position;
   }
 
@@ -39,11 +41,12 @@ export default class MatterEntity extends Phaser.Physics.Matter.Sprite {
     if (this.sound) {
       this.sound.play();
     }
-    this.health --;
-    if(this.dead) {
+    this.health--;
+    if (this.dead) {
       this.onDeath();
-      this.drops.forEach(drop => new DropItem({scene:this.scene,x:this.x,y:this.y,frame:drop}));
+      this.drops.forEach((drop) => new DropItem({
+        scene: this.scene, x: this.x, y: this.y, frame: drop,
+      }));
     }
-
   }
 }

@@ -8,9 +8,9 @@ export default class ScoreBoard extends Phaser.Scene {
 
   create() {
     const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/6UO8hpWkneCSx6cYRvlC/scores';
-    
+
     APIHandler.getData(url)
-      .then(data => {
+      .then((data) => {
         this.space = 0;
 
         data.result.sort((a, b) => b.score - a.score).slice(0, 10).forEach((obj, index) => {

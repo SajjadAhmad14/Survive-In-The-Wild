@@ -1,10 +1,10 @@
 import Phaser from 'phaser';
-import mapImage from  '../assets/images/RPG Nature Tileset.png';
+import mapImage from '../assets/images/RPG Nature Tileset.png';
 import mapJSON from '../assets/images/map.json';
 import playerPng from '../assets/images/male.png';
 import playerAtlas from '../assets/images/male_atlas.json';
 import playerAnimation from '../assets/images/male_anim.json';
-import items from "../assets/images//items.png";
+import items from '../assets/images/items.png';
 import enemiesPng from '../assets/images/enemies.png';
 import enemiesAtlas from '../assets/images/enemies_atlas.json';
 import enemiesAnimation from '../assets/images/enemies_anim.json';
@@ -13,9 +13,9 @@ import resourcesAtlas from '../assets/images/resources_atlas.json';
 import treeSound from '../assets/sound/tree.wav';
 import rockSound from '../assets/sound/rock.wav';
 import bushSound from '../assets/sound/bush.wav';
-import bearVoice from '../assets/sound/bear.wav'
-import wolfVoice from '../assets/sound/wolf.wav'
-import entVoice from '../assets/sound/ent.wav'
+import bearVoice from '../assets/sound/bear.wav';
+import wolfVoice from '../assets/sound/wolf.wav';
+import entVoice from '../assets/sound/ent.wav';
 import playerSound from '../assets/sound/player.wav';
 import collectSound from '../assets/sound/pick.wav';
 import backgroundSound from '../assets/sound/dark-forest.mp3';
@@ -25,6 +25,7 @@ import helpPng from '../assets/images/help.png';
 import scorePng from '../assets/images/score.png';
 import musicOnPng from '../assets/images/music_on.png';
 import musicOffPng from '../assets/images/music_off.png';
+
 export default class Preloader extends Phaser.Scene {
   constructor() {
     super('preloadScene');
@@ -56,12 +57,12 @@ export default class Preloader extends Phaser.Scene {
     this.load.audio('ent', entVoice);
     this.load.audio('background', backgroundSound);
     this.loading = this.add.graphics();
-    this.load.on('progress', progress => {
+    this.load.on('progress', (progress) => {
       this.loading.fillStyle(0x0000ff, 1);
       this.loading.fillRect(100, 150, 300 * progress, 25);
       percentage.setText(`${parseInt(progress * 100)}%`);
     });
-    this.load.on('fileprogress', file => {
+    this.load.on('fileprogress', (file) => {
       fileloading.setText(file.key);
     });
     this.load.on('complete', () => {

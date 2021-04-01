@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import PhaserMatterCollisionPlugin from 'phaser-matter-collision-plugin';
-import MainScene from './scenes/MainScene'
+import MainScene from './scenes/MainScene';
 import Preloader from './scenes/Preloader';
 import Title from './scenes/Title';
 import helpMe from './scenes/helpMe';
@@ -14,29 +14,29 @@ const config = {
   type: Phaser.AUTO,
   parent: 'survival-game',
   dom: {
-    createContainer: true
-},
+    createContainer: true,
+  },
   scene: [Preloader, Title, MainScene, GetUserName, helpMe, ScoreBoard],
   scale: {
-    zoom: 1
+    zoom: 1,
   },
   physics: {
     default: 'matter',
     matter: {
       debug: false,
-      gravity: { y: 0 }
-    }
+      gravity: { y: 0 },
+    },
   },
   plugins: {
     scene: [
       {
         plugin: PhaserMatterCollisionPlugin,
         key: 'matterCollision',
-        mapping: 'matterCollision'
-      }
-    ]
-  }
+        mapping: 'matterCollision',
+      },
+    ],
+  },
 
-}
+};
 
-let game = new Phaser.Game(config);
+const game = new Phaser.Game(config);

@@ -1,11 +1,11 @@
 import Phaser from 'phaser';
-import MatterEntity from "./matterEntity";
+import MatterEntity from './matterEntity';
 import enemiesPng from '../assets/images/enemies.png';
 import enemiesAtlas from '../assets/images/enemies_atlas.json';
 import enemiesAnimation from '../assets/images/enemies_anim.json';
-import bearVoice from '../assets/sound/bear.wav'
-import wolfVoice from '../assets/sound/wolf.wav'
-import entVoice from '../assets/sound/ent.wav'
+import bearVoice from '../assets/sound/bear.wav';
+import wolfVoice from '../assets/sound/wolf.wav';
+import entVoice from '../assets/sound/ent.wav';
 
 export default class Enemy extends MatterEntity {
   static preload(scene) {
@@ -14,18 +14,29 @@ export default class Enemy extends MatterEntity {
     scene.load.audio('bear', bearVoice);
     scene.load.audio('wolf', wolfVoice);
     scene.load.audio('ent', entVoice);
-
   }
 
   constructor(data) {
-    let { scene, enemy } = data;
-    let drops = JSON.parse(enemy.properties.find(p => p.name == 'drops').value);
-    let health = enemy.properties.find(p => p.name == 'health').value;
-    super({ scene, x: enemy.x, y: enemy.y, texture: 'enemies', frame: `${enemy.name}_idle_1`, drops, health, name: enemy.name });
+    const { scene, enemy } = data;
+    const drops = JSON.parse(enemy.properties.find((p) => p.name === 'drops').value);
+    const health = enemy.properties.find((p) => p.name === 'health').value;
+    super({
+      scene,
+      x: enemy.x,
+      y: enemy.y,
+      texture: 'enemies',
+      frame: `${enemy.name}_idle_1`,
+      drops,
+      health,
+      name: enemy.name,
+    });
 
-    const { Body, Bodies } = Phaser.Physics.Matter.Matter;
-    let enemyCollider = Bodies.circle(this.x, this.y, 12, { isSensor: false, label: 'enemyCollider' });
-    let enemySensor = Bodies.circle(this.x, this.y, 80, { isSensor: true, label: 'enemySensor' });
+    const {
+      Body,
+      Bodies,
+    } = Phaser.Physics.Matter.Matter;
+    const enemyCollider = Bodies.circle(this.x, this.y, 12, { isSensor: false, label: 'enemyCollider' });
+    const enemySensor = Bodies.circle(this.x, this.y, 80, { isSensor: true, label: 'enemySensor' });
     const compundBody = Body.create({
       parts: [enemyCollider, enemySensor],
       frictionAir: 0.35,
@@ -34,8 +45,8 @@ export default class Enemy extends MatterEntity {
     this.setFixedRotation();
     this.scene.matterCollision.addOnCollideStart({
       objectA: [enemySensor],
-      callback: other => {
-        if (other.gameObjectB && other.gameObjectB.name == 'player') {
+      callback: (other) => {
+        if (other.gameObjectB && other.gameObjectB.name === 'player') {
           this.attacking = other.gameObjectB;
         }
       },
@@ -54,29 +65,24 @@ export default class Enemy extends MatterEntity {
   update() {
     if (this.dead) return;
     if (this.attacking) {
-      let direction = this.attacking.position.subtract(this.position);
+      const direction = this.attacking.position.subtract(this.position);
       if (direction.length() > 24) {
-        let v = direction.normalize();
+        direction.normalize();
         this.setVelocityX(direction.x);
         this.setVelocityY(direction.y);
         if (this.attacktimer) {
           clearInterval(this.attacktimer);
           this.attacktimer = null;
         }
-      }
-      else {
-        if (this.attacktimer == null) {
-          this.attacktimer = setInterval(this.attack, 500, this.attacking);
-        }
+      } else if (this.attacktimer == null) {
+        this.attacktimer = setInterval(this.attack, 500, this.attacking);
       }
     }
     this.setFlipX(this.velocity.x < 0);
     if (Math.abs(this.velocity.x) > 0.1 || Math.abs(this.velocity.y) > 0.1) {
       this.anims.play(`${this.name}_walk`, true);
-    }
-    else {
+    } else {
       this.anims.play(`${this.name}_idle`, true);
     }
-
   }
 }

@@ -5,7 +5,7 @@ export default class Title extends Phaser.Scene {
     super('titleScene');
   }
 
-  preload() { 
+  preload() {
 
   }
 

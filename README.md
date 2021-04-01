@@ -1,18 +1,18 @@
-# RGPG GAME(Survive-In-The-Wild)
+# RPG GAME(Survive-In-The-Wild)
 
 > This repo contains source code of an RPG game built using Phaser framework and webpack.
  
- # Abou Game
+ # About Game
 
 This game is about a journey of a lone traveler through a dark wild in which there are some bears, Wolves, and Ents. Hero player needs to kill them to save itself. If you can kill your enemies, congrats, you have way too much free time on your hands and maybe you should do something better with your life. You can play piano for instance!
 
 # Instructions To Play The Game
 
-Up arrow - Move Up
-Left arrow - Move Left
-Down arrow - Move Down
-Right arrow - Move Right
-Mouse Left Click - Weapon Swing
+Up arrow - Move Up <br>
+Left arrow - Move Left <br>
+Down arrow - Move Down <br>
+Right arrow - Move Right <br>
+Mouse Left Click - Weapon Swing 
 
 ![screenshot](./src/assets/images/game-screenshot.png)
 
@@ -38,11 +38,17 @@ Run `cd Survive-In-The-wild`<br>
 **Step 2**<br>
 Run `npm install`<br>
 
+## Tests
+
+Run `npm run test`
+
 ## Built With
 
 - Phaser 3
 - Javascript
 - Webpack
+- Jest
+- Tiled
 - HTML
 - CSS
 - VScode

@@ -16,7 +16,7 @@ import bushSound from '../assets/sound/bush.wav';
 import bearVoice from '../assets/sound/bear.wav';
 import wolfVoice from '../assets/sound/wolf.wav';
 import entVoice from '../assets/sound/ent.wav';
-import playerSound from '../assets/sound/player.wav';
+// import playerSound from '../assets/sound/player.wav';
 import collectSound from '../assets/sound/pick.wav';
 import backgroundSound from '../assets/sound/dark-forest.mp3';
 import instructionsPng from '../assets/images/instructions.png';

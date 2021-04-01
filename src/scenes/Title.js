@@ -5,7 +5,7 @@ export default class Title extends Phaser.Scene {
     super('titleScene');
   }
 
-  preload() {
+  preload() { // eslint-disable-line
 
   }
 
@@ -34,6 +34,6 @@ export default class Title extends Phaser.Scene {
     });
   }
 
-  update() {
+  update() { // eslint-disable-line
   }
 }

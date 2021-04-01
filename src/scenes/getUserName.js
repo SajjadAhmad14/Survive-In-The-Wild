@@ -21,5 +21,5 @@ export default class GetUserName extends Phaser.Scene {
     });
   }
 
-  update() {}
+  update() {} // eslint-disable-line
 }

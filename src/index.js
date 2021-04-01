@@ -39,4 +39,4 @@ const config = {
 
 };
 
-const game = new Phaser.Game(config);
+const game = new Phaser.Game(config); // eslint-disable-line

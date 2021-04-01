@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import MatterEntity from "./matterEntity.js";
+import MatterEntity from "./matterEntity";
 import playerPng from '../assets/images/male.png';
 import playerAtlas from '../assets/images/male_atlas.json';
 import playerAnimation from '../assets/images/male_anim.json';

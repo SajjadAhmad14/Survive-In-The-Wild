@@ -1,11 +1,11 @@
 import Phaser from 'phaser';
 import PhaserMatterCollisionPlugin from 'phaser-matter-collision-plugin';
-import MainScene from './scenes/MainScene.js'
-import Preloader from './scenes/Preloader.js';
-import Title from './scenes/Title.js';
-import helpMe from './scenes/helpMe.js';
-import GetUserName from './scenes/getUserName.js';
-import ScoreBoard from './scenes/ScoreBoard.js';
+import MainScene from './scenes/MainScene'
+import Preloader from './scenes/Preloader';
+import Title from './scenes/Title';
+import helpMe from './scenes/helpMe';
+import GetUserName from './scenes/getUserName';
+import ScoreBoard from './scenes/ScoreBoard';
 
 const config = {
   width: 515,

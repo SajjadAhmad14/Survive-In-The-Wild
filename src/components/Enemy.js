@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import MatterEntity from "./matterEntity.js";
+import MatterEntity from "./matterEntity";
 import enemiesPng from '../assets/images/enemies.png';
 import enemiesAtlas from '../assets/images/enemies_atlas.json';
 import enemiesAnimation from '../assets/images/enemies_anim.json';

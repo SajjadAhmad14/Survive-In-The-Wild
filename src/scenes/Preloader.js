@@ -21,10 +21,8 @@ import collectSound from '../assets/sound/pick.wav';
 import backgroundSound from '../assets/sound/dark-forest.mp3';
 import instructionsPng from '../assets/images/instructions.png';
 import playPng from '../assets/images/play.png';
-// import optionsPng from '../assets/imgages/options.png';
 import helpPng from '../assets/images/help.png';
 import scorePng from '../assets/images/score.png';
-// import quitPng from '../assets/images/quit.png';
 import musicOnPng from '../assets/images/music_on.png';
 import musicOffPng from '../assets/images/music_off.png';
 export default class Preloader extends Phaser.Scene {
@@ -37,10 +35,8 @@ export default class Preloader extends Phaser.Scene {
     const fileloading = this.add.text(100, 190, '');
     this.load.image('tiles', mapImage);
     this.load.image('play', playPng);
-    // this.load.image('options', optionsPng);
     this.load.image('help', helpPng);
     this.load.image('score', scorePng);
-    // this.load.image('quit', quitPng);
     this.load.image('music_on', musicOnPng);
     this.load.image('music_off', musicOffPng);
     this.load.image('instructions', instructionsPng);

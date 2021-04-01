@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import MatterEntity from "./matterEntity.js";
+import MatterEntity from "./matterEntity";
 import treeSound from '../assets/sound/tree.wav';
 import rockSound from '../assets/sound/rock.wav';
 import bushSound from '../assets/sound/bush.wav';

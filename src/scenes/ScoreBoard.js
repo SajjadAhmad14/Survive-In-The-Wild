@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import APIHandler from '../APIs/api.js';
+import APIHandler from '../APIs/api';
 
 export default class ScoreBoard extends Phaser.Scene {
   constructor() {

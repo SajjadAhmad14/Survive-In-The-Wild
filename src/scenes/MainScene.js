@@ -1,6 +1,6 @@
-import Enemy from '../components/Enemy.js';
-import Player from '../components/player.js';
-import Resource from '../components/Resource.js';
+import Enemy from '../components/Enemy';
+import Player from '../components/player';
+import Resource from '../components/Resource';
 import mapImage from  '../assets/images/RPG Nature Tileset.png';
 import mapJSON from '../assets/images/map.json';
 

@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import DropItem from "./dropItem.js";
+import DropItem from "./dropItem";
 
 export default class MatterEntity extends Phaser.Physics.Matter.Sprite {
   constructor(data) {

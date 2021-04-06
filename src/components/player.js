@@ -54,7 +54,7 @@ export default class Player extends MatterEntity {
     APIHandler.postData('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/6UO8hpWkneCSx6cYRvlC/scores', obj);
     this.scene.scene.stop('MainScene');
     this.scene.scene.start('titleScene');
-    window.location.reload();
+    // window.location.reload();
   }
 
   update() {

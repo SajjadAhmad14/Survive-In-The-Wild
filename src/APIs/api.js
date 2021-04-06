@@ -1,12 +1,19 @@
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+
 const APIHandler = (() => {
   const postData = async (url, dataObj) => {
     try {
       const response = await fetch(url, {
         mode: 'cors',
         method: 'POST',
+        cache: 'no-cache',
+        credentials: 'same-origin',  
         headers: {
           'Content-Type': 'application/json',
         },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',  
         body: JSON.stringify(dataObj),
       });
       return response.json();

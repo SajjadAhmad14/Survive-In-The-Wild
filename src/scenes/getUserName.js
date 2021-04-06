@@ -13,11 +13,13 @@ export default class GetUserName extends Phaser.Scene {
     this.btn.addEventListener('click', () => {
       this.inputValue = document.querySelector('input').value;
       if (this.inputValue == null || this.inputValue === '') {
-        localStorage.setItem('username:', JSON.stringify('Player'));
+        // localStorage.setItem('username:', JSON.stringify('Player'));
+        alert('Player name should be valid!');
       } else {
         localStorage.setItem('username:', JSON.stringify(this.inputValue));
+        this.scene.start('MainScene');
+
       }
-      this.scene.start('MainScene');
     });
   }
 

@@ -1,5 +1,5 @@
-import "core-js/stable";
-import "regenerator-runtime/runtime";
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
 const APIHandler = (() => {
   const postData = async (url, dataObj) => {
@@ -8,12 +8,12 @@ const APIHandler = (() => {
         mode: 'cors',
         method: 'POST',
         cache: 'no-cache',
-        credentials: 'same-origin',  
+        credentials: 'same-origin',
         headers: {
           'Content-Type': 'application/json',
         },
         redirect: 'follow',
-        referrerPolicy: 'no-referrer',  
+        referrerPolicy: 'no-referrer',
         body: JSON.stringify(dataObj),
       });
       return response.json();
